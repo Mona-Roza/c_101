@@ -2,87 +2,87 @@
 
 ## İçindekiler:
 
-* [Değişkenler - Variables](/#değişkenler---variables)
+* [Değişkenler - Variables](#değişkenler---variables)
 
     * [Değişken Sınır Aralıkları](#değişken-sınır-aralıkları)
 
-    * [Değişken Tanımlama](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#değişken-tanımlama)
+    * [Değişken Tanımlama](#değişken-tanımlama)
 
-    * [Değişken İsimleri Seçilirken Dikkat Edilmesi Gereken Hususlar](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#değişken-i̇simleri-seçilirken-dikkat-edilmesi-gereken-hususlar)
+    * [Değişken İsimleri Seçilirken Dikkat Edilmesi Gereken Hususlar](#değişken-i̇simleri-seçilirken-dikkat-edilmesi-gereken-hususlar)
 
-    * [Değişken Niteleyicileri](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#değişken-niteleyicileri)
+    * [Değişken Niteleyicileri](#değişken-niteleyicileri)
 
-* [Sabitler](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#sabitler)
+* [Sabitler](#sabitler)
     
-    * [#define ile Sabit Tanımlama](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#define-ile--sabit-tanımlama)
+    * [#define ile Sabit Tanımlama](#define-ile--sabit-tanımlama)
 
-    * [const ile Sabit Tanımlama](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#const-ile-sabit-tanımlama)
+    * [const ile Sabit Tanımlama](#const-ile-sabit-tanımlama)
 
-* [Operatörler](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#operatörler)
+* [Operatörler](#operatörler)
 
     * [Atama Operatörleri](https://github.com/Mona-Roza/Notes/tree/main/embedded_system/c_basicss#atama-operatörleri)
 
-    * [Aritmetik Operatörler](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#aritmetik-operatörler)
+    * [Aritmetik Operatörler](#aritmetik-operatörler)
 
-    * [Karşılaştırma Operatörleri](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#karşılaştırma-operatörleri)
+    * [Karşılaştırma Operatörleri](#karşılaştırma-operatörleri)
 
-    * [Mantıksal Operatörler](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#mantıksal-operatörler)
+    * [Mantıksal Operatörler](#mantıksal-operatörler)
 
-    * [Diğer Operatörler](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#diğer-operatörler)
+    * [Diğer Operatörler](#diğer-operatörler)
 
-* [printf()'in kullanımı](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#printfin-kullanımı)
+* [printf()'in kullanımı](#printfin-kullanımı)
 
-    * [Format Specifiers](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#format-specifiers)
+    * [Format Specifiers](#format-specifiers)
 
-    * [Kaçış Dizileri](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#kaçış-dizileri)
+    * [Kaçış Dizileri](#kaçış-dizileri)
 
-* [scanf()'in kullanımı](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#scanfin-kullanımı)
+* [scanf()'in kullanımı](#scanfin-kullanımı)
 
-* [Diziler-Arrays](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#diziler---arrays)
+* [Diziler-Arrays](#diziler---arrays)
 
-    * [Tek Boyutlu Diziler](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#tek-boyutlu-diziler)
+    * [Tek Boyutlu Diziler](#tek-boyutlu-diziler)
 
-    * [Çok Boyutlu Diziler](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#çok-boyutlu-diziler)
+    * [Çok Boyutlu Diziler](#çok-boyutlu-diziler)
 
-* [Koşul Deyimleri](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#koşul-deyimleri)
+* [Koşul Deyimleri](#koşul-deyimleri)
 
-    * [If-Else Statement](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#if-else-statement)
+    * [If-Else Statement](#if-else-statement)
 
-    * [Switch-Case Statement](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#switch-case-statement)
+    * [Switch-Case Statement](#switch-case-statement)
 
-* [Döngü Deyimleri](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#döngü-deyimleri)
+* [Döngü Deyimleri](#döngü-deyimleri)
 
-    * [for](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#for)
+    * [for](#for)
 
-    * [while](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#while)
+    * [while](#while)
 
-    * [do…while](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#dowhile)
+    * [do…while](#dowhile)
 
-    * [break ve continue Deyimleri](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#break-ve-continue-deyimleri)
+    * [break ve continue Deyimleri](#break-ve-continue-deyimleri)
 
-    * [goto Deyimi ve Etiket](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#goto-deyimi-ve-etiket)
+    * [goto Deyimi ve Etiket](#goto-deyimi-ve-etiket)
 
-* [Fonksiyonlar](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#fonksiyonlar)
+* [Fonksiyonlar](#fonksiyonlar)
 
-    * [Fonksiyon Prototipi](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#fonksiyon-prototipi)
+    * [Fonksiyon Prototipi](#fonksiyon-prototipi)
 
-    * [Fonksiyon Tipleri](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#fonksiyon-tipleri)
+    * [Fonksiyon Tipleri](#fonksiyon-tipleri)
 
-        * [Değer Döndürmeyen Fonksiyonlar](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#değer-döndürmeyen-fonksiyonlar)
+        * [Değer Döndürmeyen Fonksiyonlar](#değer-döndürmeyen-fonksiyonlar)
 
-        * [Değer Döndüren Fonksiyonlar](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#değer-döndüren-fonksiyonlar)
+        * [Değer Döndüren Fonksiyonlar](#değer-döndüren-fonksiyonlar)
     
-    * [Özyineli - Recursive Fonksiyonlar](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#özyineli---recursive-fonksiyonlar)
+    * [Özyineli - Recursive Fonksiyonlar](#özyineli---recursive-fonksiyonlar)
 
-    * [Dizileri Fonksiyon Parametresi Olarak Gönderme](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#dizileri-fonksiyon-parametresi-olarak-gönderme)
+    * [Dizileri Fonksiyon Parametresi Olarak Gönderme](#dizileri-fonksiyon-parametresi-olarak-gönderme)
 
-* [Algoritma Pekiştirme Soruları](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#algoritma-pekiştirme-soruları)
+* [Algoritma Pekiştirme Soruları](#algoritma-pekiştirme-soruları)
 
-    * [Değişken Soruları](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#değişken-soruları)
+    * [Değişken Soruları](#değişken-soruları)
 
-    * [Koşul Deyimleri Soruları](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#koşul-deyimleri-soruları)
+    * [Koşul Deyimleri Soruları](#koşul-deyimleri-soruları)
 
-    * [Döngü Deyimleri Soruları](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#döngü-deyimleri-soruları)
+    * [Döngü Deyimleri Soruları](#döngü-deyimleri-soruları)
 
 ## Değişkenler - Variables:
 Değişkenler(variables), bellekte bilginin saklandığı gözlere verilen simgesel isimlerdir. Değişkenlerin değeri programın içerisinde değiştirilebilir.
