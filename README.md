@@ -217,7 +217,7 @@ Operators are characters used in arithmetic operations and control statements th
 | && | AND |
 | &	| Bitwise AND | 
 | \|\| | OR(Alt Gr + <) |
-| | | Bitwise OR |
+| \| | Bitwise OR |
 | ^ | Bitwise XOR |
 | ! | NOT |
 | ~ | Logical negation of the number in relation to (r-1) |
