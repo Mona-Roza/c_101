@@ -99,7 +99,7 @@ Variables are symbolic names given to information stored in memory. The values o
     
         - double (e.g. 0.55555555) (8 byte- 64 bit)
         
-        - Words (Strings) -> string (e.g. "mona", "school", "computer",....) (4 byte-32 bit)
+* Words (Strings) -> string (e.g. "mona", "school", "computer",....) (4 byte-32 bit)
     
 ### Variable Range Limits:
 
