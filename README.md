@@ -2,9 +2,9 @@
 
 ## İçindekiler:
 
-* [Değişkenler - Variables](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#değişkenler---variables)
+* [Değişkenler - Variables](/#değişkenler---variables)
 
-    * [Değişken Sınır Aralıkları](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#değişken-sınır-aralıkları)
+    * [Değişken Sınır Aralıkları](#değişken-sınır-aralıkları)
 
     * [Değişken Tanımlama](https://github.com/Mona-Roza/Notes/tree/main/embedded_systems/c_basics#değişken-tanımlama)
 
