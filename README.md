@@ -117,14 +117,14 @@ Variables have a certain range limit due to the space they occupy.
 
 When declaring a variable, the data type/type of the variable must be specified first, then the symbolic name to be given to the variable must be determined. The value of the variable can be given during declaration or at any point in the program. Example usage:
 
-```
+```c
     int num;
     num = 5;
 ```
 
 or
 
-```
+```c
     int num =5;
 ```
 
@@ -162,7 +162,7 @@ Constants are variables whose values cannot be changed during the program. The v
 
 Constants defined with #define are recognized globally. As #define is a preprocessor command, constant values specified with #define are placed into the code at compile time and do not occupy memory. Example usage:
 
-```
+```c
 #define pi  3.14141592653589793
 ```
     
@@ -170,7 +170,7 @@ Constants defined with #define are recognized globally. As #define is a preproce
 
 Constants defined with const are recognized in the scope where they are defined like variables, and are processed when called at runtime like variables, occupying memory. Example Usage:
     
-```
+```c
 const int pi = 3.141592653589793;
 ```
 
