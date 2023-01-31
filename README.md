@@ -185,7 +185,7 @@ Operators are characters used in arithmetic operations and control statements th
 | sayi1 *= sayi2 | sayi1 = sayi1 * sayi2 |
 | sayi1 \|= sayi2 | sayi1 = sayi1 \| sayi2 |
 | sayi &= sayi2 | sayi1 = sayi1 & sayi2 |
-| sayi1 ^= sayi1  | XOR Equals |
+| sayi1 ^= sayi1  | sayi1 XOR sayi1 |
 
 ### Arithmetic Operators:
 
