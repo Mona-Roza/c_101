@@ -178,7 +178,7 @@ Operators are characters used in arithmetic operations and control statements th
 
 | Operator | Meaning |
 |----|----|
-| = |Assignment operator. Assign right-side to the left-side (in compiled languages).|
+| = | Assignment operator. Assign right-side to the left-side (in compiled languages).|
 | sayi1 += sayi2 | sayi1 = sayi1 + sayi2 | 
 | sayi1 -= sayi2 | sayi1 = sayi1 - sayi2 |
 | sayi1 /= sayi2 | sayi1 = sayi1 / sayi2 |
