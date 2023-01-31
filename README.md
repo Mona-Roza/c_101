@@ -4,7 +4,7 @@
 
 * [Variables](#variables)
 
-    * [Variable Range Limits](#dVariable-Range-Limits:)
+    * [Variable Range Limits](#Variable-Range-Limits:)
 
     * [Değişken Tanımlama](#değişken-tanımlama)
 
