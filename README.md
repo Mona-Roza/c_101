@@ -130,13 +130,13 @@ or
 
 ### Considerations When Selecting Variable Names:
 
-i. Variable names should be descriptive.
+1. Variable names should be descriptive.
 
-ii. Variable names should not be keywords of the language. (int, char, main, ...)
+2. Variable names should not be keywords of the language. (int, char, main, ...)
 
-iii. The first character should be an underscore or letter. (eg: _variable1, variable2, 3rdvariable -> cannot)
+3. The first character should be an underscore or letter. (eg: _variable1, variable2, 3rdvariable -> cannot)
 
-iv. No spaces characters.
+4. No spaces characters.
         
 ### Variable Specifiers:
 
@@ -162,13 +162,17 @@ Constants are variables whose values cannot be changed during the program. The v
 
 Constants defined with #define are recognized globally. As #define is a preprocessor command, constant values specified with #define are placed into the code at compile time and do not occupy memory. Example usage:
 
-    `#define pi  3.14141592653589793`
+```
+#define pi  3.14141592653589793
+```
     
 ### Defining Constants with const:
 
 Constants defined with const are recognized in the scope where they are defined like variables, and are processed when called at runtime like variables, occupying memory. Example Usage:
     
-    `const int pi = 3.141592653589793;`
+```
+const int pi = 3.141592653589793;
+```
 
 ## Operators:
 
@@ -232,7 +236,9 @@ Operators are characters used in arithmetic operations and control statements th
 
 Used to output to the user. Example usage:
 
-`printf("Text to be printed");`
+```c
+printf("Text to be printed");
+```
 
 ### Format Specifiers:
 
@@ -275,7 +281,7 @@ Used to output to the user. Example usage:
 
 Used to receive data from the user. Example usage:
 
-```	
+```c	
 int variable_name;
 scanf("%d", &variable_name);
 ```
@@ -292,7 +298,7 @@ Arrays can only contain variable values of the same data type since arrays are d
 
 In programs, instead of defining many variables with the same data type and different names, using an array declaration makes it more practical and convenient to define the same number of variables using only one name. Once the array is defined, access to each element of the array can be achieved using the array name and an index value starting from 0 and used with the array name. General format:
 
-```
+```c
 data_type array_name[dimension];
 array_name[0] = a;
 array_name[1] = b;
@@ -302,13 +308,15 @@ array_name[dimension-1] = z;
 
 or
 
-`data_type array_name[] = {a, b, ..., z};`
+```c
+data_type array_name[] = {a, b, ..., z};
+```
 
 ### Multidimensional Arrays:
 
 Multidimensional arrays can be thought of as matrices placed on coordinate planes with two or more axes. The general format of a two-dimensional array is:
 
-```
+```c
 data_type array_name[x][y];
 array_name[0][0] = a;
 array_name[0][1] = b;
@@ -318,8 +326,9 @@ array_name[x-1][y-1] = z;
 
 or
 
-`data_type array_name[][] = {{a, b, ..., z}, {a, b, ...,z}};`
-
+```c
+data_type array_name[][] = {{a, b, ..., z}, {a, b, ...,z}};
+```
 :warning: The name of an array is also a pointer that points to the first element of the array.
 
 ## Conditional Statements:
@@ -330,7 +339,7 @@ Conditional statements are code blocks that change the flow of the program based
 
 The if-else statement is a conditional operation. If and else have a single comparison statement and the use of else is optional. If the condition is positive, the set after if is executed and the set after else is skipped; if it is negative, the set after if is skipped and the set after else, if any, is executed. General format:
 
-```
+```c
 if(condition)
 {
     Operation lines
@@ -363,7 +372,7 @@ else{
 
 A comparison statement that redirects the flow of the program from many options to one based on the contents of a variable. General format:
 
-```
+```c
 switch(variable)
 {
     case value1:
@@ -409,7 +418,7 @@ These types of statements are used to repeat a set under certain conditions. The
 ### for:
 A set or a statement can be repeated many times using for. The condition check is performed at the beginning (or before entering the loop) of the iteration. To use the for loop, we need a loop counter. The starting value of the loop counter, stopping value, and arithmetic operation applied to the counter in the end of the iteration must be specified in the condition part of the for loop. General format:
 
-```
+```c
 int i;
 
 for(i= start_value; condition; counter operation)
@@ -423,7 +432,7 @@ for(i= start_value; condition; counter operation)
 
 A repetition statement. A set or a statement can be repeated many times using while. The condition check is performed at the beginning of the iteration. General format:
 
-```
+```c
 while(condition)
 {
     Repeatable code block;
@@ -433,14 +442,14 @@ while(condition)
 
 :warning: The while loop can be used just like the for loop. To understand what we need to do, let's examine an example code block.
 
-```
-    int i =10;
-    
-    while(i>0)
-    {
-        printf("%d", i);
-        i--;
-    }
+```c
+int i =10;
+
+while(i>0)
+{
+    printf("%d", i);
+    i--;
+}
 ```
     
 As seen from the example, a starting value is given to the loop variable, and the iteration continues as long as the value satisfies the condition.
@@ -451,11 +460,10 @@ As seen from the example, a starting value is given to the loop variable, and th
 
 The difference of this statement from while is that the condition is tested after the loop. In other words, the loop is entered before the condition is tested, and the loop set is executed at least once. General format:
 	
-```
+```c
 do
 {
     Repeatable set;
-    
 }while(condition);
 ```
 
@@ -474,7 +482,7 @@ With the help of the "goto" statement, we can create loops. However, it makes th
 
 :warning: The "goto" statement is used with a label. First, a label name is given, then the code block is written and the "goto" statement is used to go back to the location specified by the label name. General syntax:
 
-```
+```c
 int x=1;
 
 etiket1:
@@ -489,7 +497,7 @@ etiket1:
 
 Functions are collections of code that are grouped together in an appropriate manner to perform a specific task. These code blocks can be called as desired. Thus, instead of repeating the same code, the function can be called, making the same code used repeatedly. General structure of a function:
 
-```
+```c
 return_data_type/void function_name([if any] parameters)
 {
     [if any] local definitions
@@ -514,7 +522,9 @@ return_data_type/void function_name([if any] parameters)
 
 If a function is defined after the main function, a prototype must be written before the main function for that function. However, function prototypes are not necessary for functions defined before the main function. Its general structure is derived from the signature of the function:
 
-`return_data_type/void function_name([if any] parameters);`
+```c
+return_data_type/void function_name([if any] parameters);
+```
 
 ### Function Types:
 There are two types of functions. These are value-returning functions and non-value returning functions.
@@ -523,7 +533,7 @@ There are two types of functions. These are value-returning functions and non-va
 
 Non-value returning functions are used like subprograms and are called by the main function or other functions. The operations in the function are executed, but they do not return any value to the calling function. General structure:
 
-```
+```c
 void function_name([if any] parameters)
 {
     ...
@@ -536,7 +546,7 @@ void function_name([if any] parameters)
 
 In returning functions, the value generated by the function is returned to the calling function with the return statement and this value is used there. Its general structure is:
 
-```
+```c
 return_type function_name([if any] parameters)
 {
 ...
@@ -552,7 +562,7 @@ return return_value;
 
 Functions that directly or indirectly call themselves. In some applications, writing algorithms in recursive functions is easier and simpler. Applications written using loop statements can also be carried out using recursive functions. General structure:
 
-```
+```c
 return_type function_name([optional] parameters)
 {
     ...
@@ -575,7 +585,7 @@ return_type function_name([optional] parameters)
 
 Within the context of what we've seen so far, it's not possible to change the values of parameters sent to functions because only the value of the variable is sent to the function. The parameter itself is not affected by the operations in the function. This is not the case with arrays. Normally, when an array is sent to a function, its elements can be changed because, as we stated in the arrays section, the name of an array is also a pointer that points to the first element of the array. As a result, when an array is sent, it is sent along with the addresses of its elements, so they are affected by any changes in the function. Its general structure:
 
-```
+```c
 return_type/void function_name(data_type parameter_array[])
 {
     ...
