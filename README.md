@@ -174,7 +174,7 @@ Constants defined with const are recognized in the scope where they are defined 
 
 Operators are characters used in arithmetic operations and control statements that have operation values.
 
-Assignment Operators:
+### Assignment Operators:
 
 | Operator | Meaning |
 |----|----|
