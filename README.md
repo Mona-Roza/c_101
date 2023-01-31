@@ -397,7 +397,8 @@ switch(variable)
         .
         .
         break;
-}```
+}
+```
 
 :warning: If the value of the variable that is the condition of the switch is not any of the values specified by case, the default code block is executed.
 
