@@ -1,6 +1,6 @@
-# C Temelleri
+# C Basics
 
-## İçindekiler:
+## Contents:
 
 * [Variables](#variables)
 
@@ -70,19 +70,19 @@
 
         * [Non-Value Returning Functions](#non-value-returning-functions)
 
-        * [Değer Döndüren Fonksiyonlar:](#değer-döndüren-fonksiyonlar)
+        * [Returning Functions](#returning-functions)
     
-    * [Özyineli - Recursive Fonksiyonlar](#özyineli---recursive-fonksiyonlar)
+    * [Recursive Functions](#recursive-functions)
 
-    * [Dizileri Fonksiyon Parametresi Olarak Gönderme](#dizileri-fonksiyon-parametresi-olarak-gönderme)
+    * [Sending Arrays as Function Parameters](#sending-arrays-as-function-parameters)
+#
+* [Algorithm Reinforcement Questions](#algorithm-reinforcement-questions)
 
-* [Algoritma Pekiştirme Soruları](#algoritma-pekiştirme-soruları)
+    * [Variable Questions](#variable-questions)
 
-    * [Değişken Soruları](#değişken-soruları)
+    * [Conditional Statement Questions](#conditional-statement-questions)
 
-    * [Koşul Deyimleri Soruları](#koşul-deyimleri-soruları)
-
-    * [Döngü Deyimleri Soruları](#döngü-deyimleri-soruları)
+    * [Loop Statement Questions:ı](#loop-statement-questions)
 
 ## Variables:
 Variables are symbolic names given to information stored in memory. The values of variables can be changed within the program.
