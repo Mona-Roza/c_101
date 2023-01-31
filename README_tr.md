@@ -84,28 +84,25 @@
 
     * [Döngü Deyimleri Soruları](#döngü-deyimleri-soruları)
 
-## Variables:
-Variables are symbolic names given to information stored in memory. The values of variables can be changed within the program.
+## Değişkenler - Variables:
+Değişkenler(variables), bellekte bilginin saklandığı gözlere verilen simgesel isimlerdir. Değişkenlerin değeri programın içerisinde değiştirilebilir.
 	
-* Characters (Letters) -> char (e.g. a, b, c, e, f, ...) (1 byte-8 bit)
+* Karakterler (Harfler) -> char (ör: a, b, c, e, f, ...) (1 byte-8 bit) 	
 
-* Numbers: 
-
-    * Integers -> int (e.g. 1,2,3,4, -1,-5,-10,...) (4 byte-32 bit)
-
-    * Floating Point:
-
-        - float (e.g. 0.55555) (4 byte- 32 bit)
+* Sayılar:
+    * Tam Sayılar -> int (integer) (ör: 1,2,3,4, -1,-5,-10,...) (4 byte-32 bit)
     
-        - double (e.g. 0.55555555) (8 byte- 64 bit)
-        
-        - Words (Strings) -> string (e.g. "mona", "school", "computer",....) (4 byte-32 bit)
-    
-### Variable Range Limits:
+    * Noktalı Sayılar:
+        - float (ör: 0.55555) (4 byte- 32 bit)
+        - double (ör: 0.55555555) (8 byte- 64 bit)
 
-Variables have a certain range limit due to the space they occupy. 
+* Kelimeler (Katarlar) -> string (ör: "mona", "okul", "bilgisayar",....) (4 byte-32 bit)
 
-| Data Type | Bit Width | Range Limits |
+### Değişken Sınır Aralıkları:
+
+Değişkenler kapladıkları yer dolayısıyla belli bir sınır aralığına sahiptirler. 
+
+| Veri Türü | Bit Genişliği |	Sınır Aralığı |
 |---|---|---| 
 | char | 8 bit | [-128, 127] |
 | int | 32 bit/ 16 bit | [-2 147 483 648, 2.147.483.649] |
@@ -113,130 +110,124 @@ Variables have a certain range limit due to the space they occupy.
 | double | 64 bit | [2 22507e-038, 1 79769e+308] |
     
 	
-### Variable Declaration:
+### Değişken Tanımlama:
 
-When declaring a variable, the data type/type of the variable must be specified first, then the symbolic name to be given to the variable must be determined. The value of the variable can be given during declaration or at any point in the program. Example usage:
+Değişken tanımlanırken öncelikle değişkenin veri türü/tipi belirtilmeli ardından değişkene verilecek simgesel isim belirlenmelidir. Değişkenin değeri tanımlanma sırasında veya programın herhangi bir noktasında verilebilir. Örnek kullanım:
 
 ```
     int num;
     num = 5;
 ```
 
-or
+veya
 
 ```
     int num =5;
 ```
 
-### Considerations When Selecting Variable Names:
+### Değişken İsimleri Seçilirken Dikkat Edilmesi Gereken Hususlar:
 
-i. Variable names should be descriptive.
+i. Değişken isimleri açıklayıcı olmalıdır.
 
-ii. Variable names should not be keywords of the language. (int, char, main, ...)
+ii. Değişken isimleri dilin anahtar sözcükleri olmamalıdır. (int, char, main, …) 
 
-iii. The first character should be an underscore or letter. (eg: _variable1, variable2, 3rdvariable -> cannot)
+iii. İlk karakter alt çizgi veya harf olmalıdır. (ör: _degisken1, degisken2, 3uncudegisken -> olamaz)
 
-iv. No spaces characters.
+iv. Boşluk karakteri bulundurmamalıdır.
         
-### Variable Specifiers:
+### Değişken Niteleyicileri:
+Değişken niteleyicileri temel değişken tip adlarının önüne takı gibi eklenerek yeni veri tipleri oluştururlar. (ör: short int degisken1) 
+    
+    • short : Değer aralığını kısaltır. Sadece int için kullanılır. Bit genişliğini 16 Bite düşürür.
+ 
+    • long: Değer aralığını arttırır. Sadece int için kullanılır.
 
-Variable specifiers create new data types by adding specifiers before basic variable type names. (eg: short int variable1)
+    • unsigned: İşaret bitini kaldırıp aralık değeri değişmeden aralığı pozitif kısma taşır. 
 
-    • short: Reduces the value range. Only used for int. Decreases the bit width to 16 bits.
+    • signed: Her tanımladığımız değişken signed olarak işaretli. 
+ 
+    • volatile: Önüne geldiği değişkenin üzerinde derleyicinin bir optimizasyon yapmasına engel olur.
 
-    • long: Increases the value range. Only used for int.
+    • static: Önüne geldiği değişkenin bir kere çalıştırıldıktan sonra program sonuna kadar hafızada depolanıp çağrıldığında aynı konumdan gelebilmesini, böylelikle belleğin tekrar tekrar yorulmamasını sağlar.
 
-    • unsigned: Removes the sign bit and moves the range value to the positive sector without changing the range.
-
-    • signed: Every variable we define is signed.
-
-    • volatile: Prevents the compiler from making an optimization on the variable that is in front of it.
-
-    • static: Ensures that the variable in front of it is stored in memory and can be retrieved from the same location when called, so that memory is not exhausted again and again, by being stored in memory after being executed once and until the end of the program.
-
-## Constants:
-
-Constants are variables whose values cannot be changed during the program. The values of constants are given at declaration time and cannot be changed again during the program.
+## Sabitler:
+Sabitler (constants), program boyunca değeri değiştirelemeyen değişkenlerdir. Sabitlerin değerleri tanımlama sırasında verilir ve program boyunca bir daha değiştirilemez.
 	
-### Defining Constants with #define:
-
-Constants defined with #define are recognized globally. As #define is a preprocessor command, constant values specified with #define are placed into the code at compile time and do not occupy memory. Example usage:
+### #define ile  Sabit Tanımlama: 
+#define ile tanımlanan sabitler globalde(genel olarak) tanınır. Define bir önişlemci komutu olduğundan derleme anında define ile belirtilen sabit değerler, kod içerisinde yerine yerleştirilir ve bu şekilde derleme yapılır, bellekte yer tutmazlar. Örnek kullanım:
 
     `#define pi  3.14141592653589793`
     
-### Defining Constants with const:
-
-Constants defined with const are recognized in the scope where they are defined like variables, and are processed when called at runtime like variables, occupying memory. Example Usage:
+### const ile Sabit Tanımlama: 
+const ile tanımlanan sabitler, değişkenlere benzer olarak tanımlandıkları bölgelere göre tanınırlar ve değişkenler gibi bellekte yer tutarak çalışma zamanında çağırıldıkları anda işleme tabii tutulurlar. Örnek Kullanım:
     
     `const int pi = 3.141592653589793;`
 
-## Operators:
+## Operatörler:
+Operatörler, aritmetik işlemlerde ve kontrol deyimlerinde kullanılan işlem değeri olan karakterlerdir. 
+	
+### Atama Operatörleri:
 
-Operators are characters used in arithmetic operations and control statements that have operation values.
-
-Assignment Operators:
-
-| Operator | Meaning |
+| Operatör | Operatörün Anlamı |
 |----|----|
-| = |Assignment operator. Assign right-side to the left-side (in compiled languages).|
+| = |Atama operatörü. (derlemeli dillerde) soldakinin içerisine sağdakini ata. |
 | sayi1 += sayi2 | sayi1 = sayi1 + sayi2 | 
 | sayi1 -= sayi2 | sayi1 = sayi1 - sayi2 |
 | sayi1 /= sayi2 | sayi1 = sayi1 / sayi2 |
 | sayi1 *= sayi2 | sayi1 = sayi1 * sayi2 |
-| sayi1 /|= sayi2 | sayi1 = sayi1 /| sayi2 |
+| sayi1 |= sayi2 | sayi1 = sayi1 | sayi2 |
 | sayi &= sayi2 | sayi1 = sayi1 & sayi2 |
-| ^= | XOR Equals |
+| ^= | XOR Eşittir |
 
-### Arithmetic Operators:
+### Aritmetik Operatörler:
 
-| Operator | Meaning|
+| Operatör | Operatörün Anlamı |
 |----|----|
-| + | Addition operator. Adds the two numbers on the right and left. |
-| -	| Subtraction operator. Subtracts the number on the right from the number on the left.|
-| * | Multiplication operator. Multiplies the two numbers on the right and left. |
-| / | Division operator. Divides the number on the left by the number on the right. |
-| % (Mod) |Modulo operation. (Remainder of division) |
-| sayi++ |  Increases the number by one. (Order of operation depends on whether it is on the right or left of the number)|
-| sayi-- | Decreases the number by one. (Order of operation depends on whether it is on the right or left of the number) |
+| + | Topalama operatörü. Sağındaki ve solundaki iki sayıyı topla. |
+| -	| Çıkartma operatörü. Sağındaki sayıyı solundaki sayıdan çıkarır. |
+| * | Çarpma operatörü. Sağındaki ve solundaki iki sayıyı çarpar. |
+| / | Bölme operatörü. Solundaki sayıyı sağındaki sayıya böler. |
+| % (Mod) | Mod Alma işlemi yapar. (Bölümünden kalan) |
+| sayi++ | Sayıyı bir arttırır. (sayinın sağında ya da solunda olması okunma sırasına göre işlem önceliğini değiştirir.) |
+| sayi-- | Sayıyı bir azaltır. |
 
 ### Karşılaştırma Operatörleri:
 
-| Operator | Meaning |
+| Operatör | Operatörün Anlamı |
 |----|----|
-| < | Less Than |
-| > | Greater Than |
-| >= | Greater Than or Equal |
-| <= | Less Than or Equal |
-| == | Equal? |
-| != | Not Equal? |
+| < | Küçüktür |
+| > | Büyüktür |
+| >= |Büyük Eşittir |
+| <= | Küçük Eşittir |
+| == | Eşit mi? |
+| != | Eşit değil mi? |
 
-### Logical Operators:
+### Mantıksal Operatörler:
 
-| Operator | Meaning |
+| Operatör | Operatörün Anlamı |
 |----|----|
 | && | AND |
-| &	| Bitwise AND | 
+| &	| Bit düzeyinde AND | 
 | || | OR(Alt Gr + <) |
-| | | Bitwise OR |
-| ^ | Bitwise XOR |
-| ! | NOT |
-| ~ | Logical negation of the number in relation to (r-1) |
+| | | Bit düzeyinde OR |
+| ^ | Bit düzeyinde XOR |
+| ! | Değil |
+| ~ | Sayının (r-1)'e göre mantıksal tersi |
 
-### Other Operators:
+### Diğer Operatörler:
 
-| Operator | Meaning |
+| Operatör | Operatörün Anlamı |
 |----|----|
-| (Condition):(if it's true)?(if it's false); | This operator serves as a one-liner condition. |
+| (Condition):(if it's true)?(if it's false); | Bu operatör ile tek satırlık koşullar yerine getirilir. |
 
-## Usage of printf():
+## printf()'in kullanımı: 
+Kullanıcıya çıktı vermeye yarar. Örnek kullanım:
 
-Used to output to the user. Example usage:
-
-`printf("Text to be printed");`
+`printf("Yazdırılacak metin");`
 
 ### Format Specifiers:
 
-| Data Type | Format Specifier |
+| Veri Tipi | Format specifier |
 |---|---|
 | char | %c|
 | int | %d|
@@ -247,24 +238,24 @@ Used to output to the user. Example usage:
 | unsigned int | %u |
 | string | %s |
 
-:warning: Feature for %f: %.(number of decimal places)f
+:warning: %f için özellik : %.(noktadan sonraki hanesayısı)f
 
-### Escape Sequences:
+### Kaçış Dizileri:
 
-| Escape Sequence | Represented Symbol | 
+| Kaçış Dizgisi | Temsil Edilen İşaret | 
 |---|---|
-| \a | Represents an alert (beep, bell) |
-| \b | Backspace |
-| \e | Escape character |
-| \f | Form Feed Page End | 
-| \n | New Line (Line Feed) |
-| \r | Line Start |
-| \t | Horizontal Tab |
-| \v | Vertical Tab |
-| \\\ | Backslash |
-| \\' | Apostrophe or single quote mark |
-| \\" | Çift tırnak işareti |
-| \\? | Soru işareti (trigraphs) |
+| \a | Uyarıyı (Bip, Zil) temsil ediyor |
+| \b | Geri tuşu |
+| \e | Kaçış karakteri |
+| \f | Form Besleme Sayfa Sonu | 
+| \n | Yeni Satır (Satır Besleme) |
+| \r | Satır Başı |
+| \t | Yatay Sekme |
+| \v | Dikey Sekme |
+| \\ | Ters Eğik Çizgi |
+| \' | Kesme İşareti veya tek tırnak işareti |
+| \" | Çift tırnak işareti |
+| \? | Soru işareti (trigraphs) |
 | \nnn | önlemek için kullanılır Sayısal değeri nnn tarafından verilen bayt sekizlik sayı |
 | \xhh… | Sayısal değeri hh tarafından verilen bayt, onaltılık sayı |
 | \uhhhh | Unicode kod noktası 10000 onaltılık değerin altında |
