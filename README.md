@@ -142,17 +142,17 @@ iv. No spaces characters.
 
 Variable specifiers create new data types by adding specifiers before basic variable type names. (eg: short int variable1)
 
-    • short: Reduces the value range. Only used for int. Decreases the bit width to 16 bits.
+• short: Reduces the value range. Only used for int. Decreases the bit width to 16 bits.
 
-    • long: Increases the value range. Only used for int.
+• long: Increases the value range. Only used for int.
 
-    • unsigned: Removes the sign bit and moves the range value to the positive sector without changing the range.
+• unsigned: Removes the sign bit and moves the range value to the positive sector without changing the range.
 
-    • signed: Every variable we define is signed.
+• signed: Every variable we define is signed.
 
-    • volatile: Prevents the compiler from making an optimization on the variable that is in front of it.
+• volatile: Prevents the compiler from making an optimization on the variable that is in front of it.
 
-    • static: Ensures that the variable in front of it is stored in memory and can be retrieved from the same location when called, so that memory is not exhausted again and again, by being stored in memory after being executed once and until the end of the program.
+• static: Ensures that the variable in front of it is stored in memory and can be retrieved from the same location when called, so that memory is not exhausted again and again, by being stored in memory after being executed once and until the end of the program.
 
 ## Constants:
 
@@ -183,7 +183,7 @@ Assignment Operators:
 | sayi1 -= sayi2 | sayi1 = sayi1 - sayi2 |
 | sayi1 /= sayi2 | sayi1 = sayi1 / sayi2 |
 | sayi1 *= sayi2 | sayi1 = sayi1 * sayi2 |
-| sayi1 \|= sayi2 | sayi1 = sayi1 /| sayi2 |
+| sayi1 \|= sayi2 | sayi1 = sayi1 \| sayi2 |
 | sayi &= sayi2 | sayi1 = sayi1 & sayi2 |
 | ^= | XOR Equals |
 
@@ -216,7 +216,7 @@ Assignment Operators:
 |----|----|
 | && | AND |
 | &	| Bitwise AND | 
-| || | OR(Alt Gr + <) |
+| \|\| | OR(Alt Gr + <) |
 | | | Bitwise OR |
 | ^ | Bitwise XOR |
 | ! | NOT |
