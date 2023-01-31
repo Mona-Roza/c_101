@@ -4,7 +4,7 @@
 
 * [Variables](#variables)
 
-    * [Variable Range Limits](#variable-range-limits:)
+    * [Variable Range Limits](#variable-range-limits)
 
     * [Variable Declaration](#variable-declaration)
 
