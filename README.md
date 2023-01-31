@@ -2,9 +2,9 @@
 
 ## İçindekiler:
 
-* [Değişkenler - Variables](#değişkenler---variables)
+* [Variables](#variables)
 
-    * [Değişken Sınır Aralıkları](#değişken-sınır-aralıkları)
+    * [Variable Range Limits](#dVariable-Range-Limits:)
 
     * [Değişken Tanımlama](#değişken-tanımlama)
 
