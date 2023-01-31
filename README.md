@@ -263,78 +263,85 @@ Used to output to the user. Example usage:
 | \v | Vertical Tab |
 | \\\ | Backslash |
 | \\' | Apostrophe or single quote mark |
-| \\" | Çift tırnak işareti |
+| \\" | Double quote mark |
 | \\? | Soru işareti (trigraphs) |
-| \nnn | önlemek için kullanılır Sayısal değeri nnn tarafından verilen bayt sekizlik sayı |
-| \xhh… | Sayısal değeri hh tarafından verilen bayt, onaltılık sayı |
-| \uhhhh | Unicode kod noktası 10000 onaltılık değerin altında |
-| \Uhhhhhhh | Unicode kod noktası, burada h onaltılık bir rakamdır |
+| \nnn | Used to precede Octal value represented by nnn |
+| \xhh… | Byte represented by hh, hexadecimal number |
+| \uhhhh | Unicode code point below 10000 hexadecimal value |
+| \Uhhhhhhh | Unicode code point where h is a hexadecimal digit |
 	
 
-## scanf()'in kullanımı: 
-Kullanıcıdan veri almaya yarar. Örnek kullanım:
+## Usage of scanf():
+
+Used to receive data from the user. Example usage:
+
 ```	
-int degisken_adi;
-scanf("%d", &degisken_adi);
+int variable_name;
+scanf("%d", &variable_name);
 ```
 
-## Diziler - Arrays: 
-Diziler, aynı veri çeşidinden olan değişkenlerin oluşturduğu bir kümedir. Diziler kullanılarak, aynı isimle birden fazla değişkene erişilebilir ve işlem yapılabilir. 
+## Arrays - Arrays:
 
-Diziler tek ya da çok boyutlu olarak tanımlanabilir. 
+Arrays are a set of variables of the same data type. Using arrays, multiple variables with the same name can be accessed and processed.
 
-Diziler belirli bir veri türünden tanımlanabileceğinden dizilerde sadece aynı veri türünden değişken değerleri yer alabilir.
+Arrays can be defined as one or multi-dimensional.
 
-### Tek Boyutlu Diziler:
-Programlarda, aynı veri türünden ve farklı isimlere sahip çok fazla sayıda değişken tanımlamak yerine, dizi bildirimi yapmak suretiyle sadece tek isim kullanarak aynı sayıda değişken tanımlamak daha pratik bir sistem ve kolaylık sağlar. Dizi tanımlandığında, dizinin her bir elemanına dizi adı ile birlikte 0'dan başlayarak kullanılan indeks değeri ile erişim sağlanır. Genel  yazım biçimi:
+Arrays can only contain variable values of the same data type since arrays are defined with a specific data type.
+
+### One-dimensional Arrays:
+
+In programs, instead of defining many variables with the same data type and different names, using an array declaration makes it more practical and convenient to define the same number of variables using only one name. Once the array is defined, access to each element of the array can be achieved using the array name and an index value starting from 0 and used with the array name. General format:
 
 ```
-veri_tipi dizi_adi[boyut];
-dizi_adi[0] = a;
-dizi_adiç[1] = b;
+data_type array_name[dimension];
+array_name[0] = a;
+array_name[1] = b;
 ...
-dizi_adi[boyut-1] = z;
+array_name[dimension-1] = z;
 ```
 
-veya
+or
 
-`veri_tipi dizi_adi[] = {a, b, ..., z};`
+`data_type array_name[] = {a, b, ..., z};`
 
-### Çok Boyutlu Diziler:
-Çok boyutlu diziler 2 veya daha fazla ekseni olan koordinat düzlemlerine yerleştirilmiş matrisler gibi düşünülebilirler. 2 boyutlu bir dizinin genel yazım biçimi:
+### Multidimensional Arrays:
+
+Multidimensional arrays can be thought of as matrices placed on coordinate planes with two or more axes. The general format of a two-dimensional array is:
 
 ```
-veri_tipi dizi_adi[x][y];
-dizi_adi[0][0] = a;
-dizi_adi[0][1] = b;
+data_type array_name[x][y];
+array_name[0][0] = a;
+array_name[0][1] = b;
 ...
-dizi_adi[x-1][y-1] = z;
+array_name[x-1][y-1] = z;
 ```
 
-veya
+or
 
-`veri_tipi dizi_adi[][] = {{a, b, ..., z}, {a, b, ...,z}};`
+`data_type array_name[][] = {{a, b, ..., z}, {a, b, ...,z}};`
 
-:warning: Bir dizinin adı aynı zamanda dizinin 0. elemanını işaret eden bir işaretçidir. 
+:warning: The name of an array is also a pointer that points to the first element of the array.
 
-## Koşul Deyimleri:
-Koşullu ifadeler belirli şartlar durumunda program akışını değiştirecek kod blokları yaratmaya yarar.
+## Conditional Statements:
 
-### If-Else Statement: 
-if-else koşullu işlem yapma deyimidir. İf ve else tek bir karşılaştırma deyimi olup else'nin kullanımı isteğe bağlıdır. Eğer koşul olumlu ise if'den sonraki küme yürütülür ve else'den sonraki küme atlanır; olumsuz ise, if'den sonraki küme atlanır ve eğer varsa else'den sonraki küme yürütülür. Genel yazım biçimi: 
+Conditional statements are code blocks that change the flow of the program based on certain conditions.
+
+### If-Else Statement:
+
+The if-else statement is a conditional operation. If and else have a single comparison statement and the use of else is optional. If the condition is positive, the set after if is executed and the set after else is skipped; if it is negative, the set after if is skipped and the set after else, if any, is executed. General format:
 
 ```
-if( koşul )
+if(condition)
 {
-    İşlem satıları
+    Operation lines
     .
     .
     .
 }
 
-else if( ikincil_koşul) 
+else if(secondary_condition) 
 { 
-    İşlem satıları
+    Operation lines
     .
     .
     .
@@ -342,7 +349,7 @@ else if( ikincil_koşul)
 
 else{ 
 
-    İşlem satıları
+    Operation lines
     .
     .
     .
@@ -350,23 +357,24 @@ else{
 }
 ```
 
-:warning: İki veya daha çok koşul mantıksal operatörler ile birleştirilerek verilebilir.
+:warning: Two or more conditions can be combined with logical operators.
 
-### Switch-Case Statement: 
-Bir değişkenin içeriğine bakarak programın akışını birçok seçenekten birine yönlendiren bir karşılaştırma deyimidir. Genel yazım biçimi:
+### Switch-Case Statement:
+
+A comparison statement that redirects the flow of the program from many options to one based on the contents of a variable. General format:
 
 ```
-switch(degisken)
+switch(variable)
 {
-    case değer1:
-        Kod bloğu1;
+    case value1:
+        Code block1;
         .
         .
         .
         break;
         
-    case değer2:
-        Kod bloğu2;
+    case value2:
+        Code block2;
         .
         .
         .
@@ -376,23 +384,22 @@ switch(degisken)
     .
     .
     
-    case değerN:
-        Kod bloğuN;
+    case valueN:
+        Code blockN;
         .
         .
         .
         break;
     
     default:
-        Kod bloğu1;
+        Code block1;
         .
         .
         .
         break;
-}
-```
+}```
 
-:warning: Eğer switch'in koşulu olan değişkenin değeri case ile belirtilen değerlerden hiçbiri değilse default kod bloğu yürütülür. 
+:warning: If the value of the variable that is the condition of the switch is not any of the values specified by case, the default code block is executed.
 
 ## Döngü Deyimleri:
 Bu tip deyimler bir kümenin belirli bir koşul altında yinelenmesi için kullanılır. C dilinde while, do…while ve for olmak üzere üç tip döngü deyimi vardır. 
