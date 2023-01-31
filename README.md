@@ -20,7 +20,7 @@
 
 * [Operators](#operators)
 
-    * [Assignment Operators:](#assignment-operators)
+    * [Assignment Operators](#assignment-operators)
 
     * [Arithmetic Operators](#arithmetic-perators)
 
