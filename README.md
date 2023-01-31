@@ -183,7 +183,7 @@ Assignment Operators:
 | sayi1 -= sayi2 | sayi1 = sayi1 - sayi2 |
 | sayi1 /= sayi2 | sayi1 = sayi1 / sayi2 |
 | sayi1 *= sayi2 | sayi1 = sayi1 * sayi2 |
-| sayi1 /|= sayi2 | sayi1 = sayi1 /| sayi2 |
+| sayi1 \|= sayi2 | sayi1 = sayi1 /| sayi2 |
 | sayi &= sayi2 | sayi1 = sayi1 & sayi2 |
 | ^= | XOR Equals |
 
