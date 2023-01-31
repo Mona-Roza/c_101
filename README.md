@@ -402,35 +402,36 @@ switch(variable)
 
 :warning: If the value of the variable that is the condition of the switch is not any of the values specified by case, the default code block is executed.
 
-## Döngü Deyimleri:
-Bu tip deyimler bir kümenin belirli bir koşul altında yinelenmesi için kullanılır. C dilinde while, do…while ve for olmak üzere üç tip döngü deyimi vardır. 
+## Loop Statements:
 
-### for: 
-Bir küme ya da bir deyim for kullanılarak birçok kez yinelenebilir. Yinelenmesi için koşul sınanması çevrim başında (ya da çevrime girmeden) yapılır. For döngüsünü kullanabilmek için bir döngü sayacına ihtiyacımız vardır. Döngü sayacının başlangıç değeri, durma değeri ve çevrim sonunda sayaca uygulanacak aritmetik işlem for döngüsünün koşul kısmında belirtilmelidir. Genel yazım biçimi:
+These types of statements are used to repeat a set under certain conditions. There are three types of loop statements in C language, while, do...while and for.
+
+### for:
+A set or a statement can be repeated many times using for. The condition check is performed at the beginning (or before entering the loop) of the iteration. To use the for loop, we need a loop counter. The starting value of the loop counter, stopping value, and arithmetic operation applied to the counter in the end of the iteration must be specified in the condition part of the for loop. General format:
 
 ```
 int i;
 
-for(i= başlangıç_değeri; koşul; sayaç işlemi)
+for(i= start_value; condition; counter operation)
 {
-    Tekrarlanacak kod bloğu;
+    Repeatable code block;
 }
 ```
-:warning: Koşul olumlu olduğu sürece çevrim yinelenir.
-    
+:warning: The iteration will be repeated as long as the condition is positive.
 
-### while: 
-Tekrarlama deyimidir. Bir küme ya da bir deyim while kullanılarak birçok kez yinelenebilir. Yinelenmesi için koşul sınanması çevrim başında yapılır. Genel yazım biçimi:
+### while:
+
+A repetition statement. A set or a statement can be repeated many times using while. The condition check is performed at the beginning of the iteration. General format:
 
 ```
-while(koşul)
+while(condition)
 {
-    Tekrarlanacak kod bloğu;
+    Repeatable code block;
 }
 ```
-:warning: Koşul olumlu olduğu sürece çevrim yinelenir.
+:warning: The iteration will be repeated as long as the condition is positive.
 
-:warning: While döngüsünü for döngüsünü kullandığımız gibi kullanmak mümkündür. Bunun için yapmamız gerekenleri anlatabilmek için örnek bir kod bloğu inceleyelim.
+:warning: The while loop can be used just like the for loop. To understand what we need to do, let's examine an example code block.
 
 ```
     int i =10;
@@ -442,86 +443,91 @@ while(koşul)
     }
 ```
     
-Örnekten de görüleceği gibi, döngü değişkenine bir başlangıç değeri verilir ve döngünün her bir çevrinde bu değer üzerinden değerin koşul şartına uymayana kadar dönmesi sağlanır.
+As seen from the example, a starting value is given to the loop variable, and the iteration continues as long as the value satisfies the condition.
 
-:warning: While döngüsünde en çok dikkat edilmesi gereken nokta koşulda kullanılan değişkene başlangıç değeri atanmasıdır. Herhangi bir değişkene başlangıç değeri verilmediğinde, o değişkenin içeriği rastgele bir değer alır; bu değer koşulu olumsuz kılarsa hiç döngü içine girilmez. Diğer bir nokta ise koşulda kullanılan değişkenin döngü içerisinde değiştirilmesi gerektiğidir. 
+:warning: The most important thing to consider in the while loop is assigning a starting value to the variable used in the condition. If no starting value is given to any variable, the content of the variable will take a random value, and if this value makes the condition negative, the loop will not enter. Another point is that the variable used in the condition must be changed within the loop.
 		
-### do…while: 
-Bu deyimin while'dan farkı, koşulun döngü sonunda sınanmasıdır. Yani koşul sınanmadan çevrime girilir ve döngü kümesi en az bir kere yürütülür. Genel yazım biçimi:
+### do…while:
+
+The difference of this statement from while is that the condition is tested after the loop. In other words, the loop is entered before the condition is tested, and the loop set is executed at least once. General format:
 	
 ```
 do
 {
-    Tekrarlanacak küme;
+    Repeatable set;
     
-}while(koşul);
+}while(condition);
 ```
 
-### break ve continue Deyimleri: 
-Döngü deyimleri içindekiler yürütülürken, çevrimin, koşuldan bağımsız ivedi olarak sonlanması istendiğinde veya döngünün ivedi olarak bir sonraki çevrime geçmesi istendiğinde break ve continue kullanılır.
+### break and continue Statements:
+
+While executing the contents inside the loop statements, if it is necessary to terminate the iteration or skip the current iteration and continue with the next one, break and continue statements can be used respectively.
 	
-* break deyimi: Bir döngü içerisinde break deyimi ile karşılaşıldığı zaman, döngü, koşula bakılmaksızın sonlanır ve programın akışı döngüden sonraki ilk deyime yada fonksiyona atlar. Break deyimi, özel bir durum oluştuğunda while, do…while, for ve switch içerisinden çıkmak için kullanılır. 
+* break Statement: When a "break" statement is encountered in a loop, the loop ends immediately, regardless of the condition, and the flow of the program jumps to the next statement or function after the loop. The "break" statement is used to exit from within a "while", "do...while", "for" or "switch" when a specific condition occurs.
 		
-	:warning: İçiçe döngüde kullanıldığı zaman en içtekinde etki eder, üstteki döngü dönmeye devam edecektir. 
+	:warning: If used inside nested loops, it affects only the innermost loop, and the outer loop continues to run. 
 			
-* continue deyimi: Bir döngü içerisinde continue deyimiyle karşılaşılırsa, ondan sonra gelen deyimler veya fonksiyonlar atlanır ve döngü bir sonraki çevrime girer. Break deyiminin tersi denilebilir. Break döngüyü ivedi olarak sonlandırır, continue bir sonraki çevrime geçirir.
+* continue Statement: When encountering a "continue" statement in a loop, any statements or functions following it are skipped, and the loop enters the next iteration. It can be considered the opposite of "break". "Break" immediately ends the loop, while "continue" jumps to the next iteration.
 		
-### goto Deyimi ve Etiket: 
-goto deyimi yardımıyla döngü kurabiliriz. Ancak bu okunmayı zorlaştırdığından programcılar tarafından önerilmemektedir. Yine de bazen kullanılması zorunluluk haline gelebilir. 
+### goto Statement and Label:
+With the help of the "goto" statement, we can create loops. However, it makes the code difficult to read, so it is not recommended by programmers. Nevertheless, it may become necessary to use it at times.
 
-:warning: goto deyimi, bir label ile kullanılır. Önce bir label ismi verilir, ardından kod bloğu yazılır ve goto deyimi ardından label ismi ile belirtilen yere geri dönmesi emredilir.Genel yazım biçimi:
-
-```
-    int x=1;
-    
-    etiket1:
-        x++;
-        if(x<100) 
-        {
-            goto etiket1;
-        }
-```
-
-## Fonksiyonlar:
-Fonksiyonlar, belirli bir işi yapmak için uygun bir biçimde bir araya getirilmiş kod dizileridir. Bu kod dizileri istenilen yerde çağrılabilir. Böylece tekar eden dizileri yerine fonksiyon çağrılarak aynı kod tekrar tekrar kullanılmış olur. Fonksiyonun genel yapısı:
+:warning: The "goto" statement is used with a label. First, a label name is given, then the code block is written and the "goto" statement is used to go back to the location specified by the label name. General syntax:
 
 ```
-dönüş_veri_tipi/void fonksiyon_adi([varsa]parametreler)
+int x=1;
+
+etiket1:
+    x++;
+    if(x<100) 
+    {
+        goto etiket1;
+    }
+```
+
+## Functions:
+
+Functions are collections of code that are grouped together in an appropriate manner to perform a specific task. These code blocks can be called as desired. Thus, instead of repeating the same code, the function can be called, making the same code used repeatedly. General structure of a function:
+
+```
+return_data_type/void function_name([if any] parameters)
 {
-    [varsa] yerel tanımlamalar
+    [if any] local definitions
     ...
-    kod bloğu
+    code block
     ...
-    [dönüş_veri_tipi varsa] return değer;
+    [if any] return value;
 }
 ```
 
-* dönüş_veri_tipi: Eğer fonksiyon geriye bir değer döndürecek ise fonksiyon imzasında döndürülecek değerin veri tipi belirtilir.
+* return_data_type: If the function is to return a value, the data type of the value to be returned is specified in the function signature.
 
-* fonksiyon_adi: Fonksiyonu çağırırken kullanılacak belirleyici isimdir. Değişken adı tanımlarken uyulması gereken kurallar burada da geçerlidir.
+* function_name: The identifier name used when calling the function. The rules to follow for variable names also apply here.
 
-* parametreler: Varsa, fonksiyon içinde kullanılması gerekli değerleri ve tiplerini içerir. Her parametre değişken tanımlar gibi tanımlanır. Kullanılan parametre birden fazla ise virgül (,) ile ayrılır. 
+* parameters: If any, it includes the values and types required for use within the function. Each parameter is defined like a variable definition. If more than one parameter is used, they are separated by commas (,).
 
-:warning: Fonksiyona gönderilen parametre olarak gönderilen değişkenleri değeri fonksiyon içerisinde değiştirilse dahi fonksiyon bittiğinde sahip oldukları ilk değere geri dönerler. Ancak fonksiyona parametre olarak bir değişkenin adresi gönderildiyse ve bu adres üzerinden değişkenin değeri değiştirildiyse bu değişiklik kalıcı olur. 
+:warning: If the variables sent as parameters to the function are changed in value within the function, they will return to their original values when the function is finished. However, if the address of a variable is sent as a parameter to the function and its value is changed through this address, this change will be permanent.
 
-* yerel tanımlamalar: Fonksiyona özgü değişken ve sabit gibi tanımlamalardır. Bu değişkenler fonksiyon çalıştığı sürece bellekte tutulur, ardından bellekten silinirler.
+* local definitions: definitions that are specific to the function, such as variables and constants. These variables are stored in memory during the function's execution and then deleted from memory.
 
-### Fonksiyon Prototipi:
-Tanımlanan bir fonksiyon eğer main fonksiyonundan sonra tanımlandıysa bu fonksiyon için main fonksiyonundan önce bir prototip yazılması gerekir. Ancak main fonksiyonundan önce tanımlanan fonksiyonlar için fonksiyon prototipi yazılmasa da olur. Genel yapısı fonksiyonun imzasından ibarettir:
+### Function Prototype:
 
-`dönüş_veri_tipi/void fonksiyon_adi([varsa]parametreler);`
+If a function is defined after the main function, a prototype must be written before the main function for that function. However, function prototypes are not necessary for functions defined before the main function. Its general structure is derived from the signature of the function:
 
-### Fonksiyon Tipleri:
-İki tip fonksiyon vardır. Bunlar değer döndüren fonksiyonlar ve değer döndürmeyen fonksiyonlardır.
+`return_data_type/void function_name([if any] parameters);`
 
-#### Değer Döndürmeyen Fonksiyonlar:
-Değer döndürmeyen fonksiyonlar, alt program gibi kullanılarak main veya diğer fonksiyonlar tarafından çağrıda bulunulur. Fonksiyon içindeki işlemler icra edilir, fakar çağrıda bulunan fonksiyona herhagi bir değer döndürmezler. Genel yapısı:
+### Function Types:
+There are two types of functions. These are value-returning functions and non-value returning functions.
+
+#### Non-Value Returning Functions:
+
+Non-value returning functions are used like subprograms and are called by the main function or other functions. The operations in the function are executed, but they do not return any value to the calling function. General structure:
 
 ```
-void fonksiyon_adi([varsa] parametreler)
+void function_name([if any] parameters)
 {
     ...
-    kod bloğu
+    code block
     ...
 }
 ```
@@ -539,103 +545,102 @@ dönüs_tipi fonksiyon_adi([varsa] parametreler)
 }
 ```
 
-:warning: **return** ifadesinden sonra yazılan kodlar işleme alınmaz, bu ifade işleme alındığı anda fonksiyon çalışmayı bırakır.
+:warning: The code written after the **return** statement is not processed, this statement immediately stops the function from running when processed.
 
-### Özyineli - Recursive Fonksiyonlar:
-Doğrudan veya dolaylı olarak kendi kendini çağıran fonksiyonlardır. Bazı uygulamalarda birçok algoritmanın recursive fonksiyonlarla yazılması daha kolay ve sadedir. Döngü deyimleri kullanılarak yazılan uygulamalar da recursive fonksiyonlarla gerçekleştirilebilirler. Genel yapısı:
+### Recursive Functions:
+
+Functions that directly or indirectly call themselves. In some applications, writing algorithms in recursive functions is easier and simpler. Applications written using loop statements can also be carried out using recursive functions. General structure:
 
 ```
-dönüş_tipi fonksiyon_adi([varsa] parametreler)
+return_type function_name([optional] parameters)
 {
     ...
-    kod bloğu
+    code block
     ...
 
-    if(koşul)
+    if(condition)
     {
-        return fonksiyon_adi([varsa] parametreler);
+        return function_name([optional] parameters);
     }
     else
     {
-        return deger;
+        return value;
     }
     
 }
 ```
 
-### Dizileri Fonksiyon Parametresi Olarak Gönderme:
-Şu ana kadar gördüğümüz bilgi çerçevesinde, fonksiyonlara gönderilen parametre değerlerinin fonksiyon içerisinde değiştirilmesi mümkün değildir, çünkü fonksiyona değişkenin sadece değeri gönderilir. Fonksiyon içerisindeki işlemlerden gönderilen parametrenin kendisi etkilenmez. Dizilerde durum böyle değildir. Normal kullanımda dizi fonksiyona gönderildiğinde elemanlar değiştirilebilir. Çünkü diziler bölümünde belirttiğimiz gibi dizinin adı aynı zamanda dizinin ilk elemanını gösteren bir işaretçidir. Durum böyle olduğundan, dizi gönderildiğinde, dizi elemanları adresleriyle birlikte gönderilmiş olur ve fonksiyon içerisindeki değişiklerden etkilenirler.Genel yapısı:
+### Sending Arrays as Function Parameters:
+
+Within the context of what we've seen so far, it's not possible to change the values of parameters sent to functions because only the value of the variable is sent to the function. The parameter itself is not affected by the operations in the function. This is not the case with arrays. Normally, when an array is sent to a function, its elements can be changed because, as we stated in the arrays section, the name of an array is also a pointer that points to the first element of the array. As a result, when an array is sent, it is sent along with the addresses of its elements, so they are affected by any changes in the function. Its general structure:
 
 ```
-dönüş_tipi/void fonksiyonadi(veri_tipi parametre_dizi[])
+return_type/void function_name(data_type parameter_array[])
 {
     ...
-    kod bloğu
+    code block
     ...
-    [varsa] return değer;
+    [optional] return value;
 }
 ```
-## Algoritma Pekiştirme Soruları:
+## Algorithm Reinforcement Questions:
 
-### Değişken Soruları:
+### Variable Questions:
+* Type a program that calculates the area of a triangle given the length of a side and its height.
 
-* Bir kenar uzunluğu ve o kenara ait yüksekliği girilen üçgenin alanını hesaplayan programı yazınız.
+* Type a program that displays the VAT-inclusive price after VAT (%18) is added to a given price.
 
-* Girilen bir fiyatın KDV (%18) eklendikten sonraki KDV’li fiyatını ekrana yazdıran programı yazınız.
+* Type a program that calculates the circumference and area of a circle given its radius. (π = 3.14 and is taken as constant)
 
-* Yarıçapı girilen dairenin çevresini ve alanını hesaplayan programı yazınız. (π = 3.14 ve constant olarak alınız)  
+### Conditional Statement Questions:
 
-### Koşul Deyimleri Soruları:
+* Type a program that displays whether a given number is positive or negative.
+Algorithm and flowchart that displays which of two given numbers is smaller.
 
-* Girilen bir sayının pozitif mi negatif mi olduğunu ekrana yazdıran programı yazınız.
+* Type a program that calculates the weighted average of a student's quiz and final grades. (Calculate the weighted average by taking 30% of the quiz score and 70% of the final score, will they pass or fail? If the final score is below 60, they fail, if the average is below 50, they fail)
 
-* Girilen iki sayıdan hangisinin daha küçük olduğunu ekrana yazdıran algoritma ve akış şeması
+* Type a program that calculates whether a given number is odd or even and displays the result.
 
-* Bir öğrencinin almış olduğu vize notu ile final notunun ağırlıklı ortalamasını hesaplayan programı yazınız. (Vize notunun %30’unu final notunun %70’ini alarak hesaplama yapınız, geçti mi kaldı mı? Final 60'ın altında olursa kalsın ortalama 50'nin altında olursa kalsın)
+* Type a program that calculates the absolute value of a given number and displays the result.
 
-* Girilen bir sayının tek mi çift mi olduğunu hesaplayan ve sonucu ekrana yazdıran programı yazınız.
+* Type a program that displays whether a given x is a multiple of another given y.
 
-* Girilen bir sayının mutlak değerini hesaplayan ve sonucu ekrana yazdıran programı yazınız.
+## Loop Statement Questions:
 
-* Girilen bir x sayısının yine girilen bir y sayısına tam bölünüp bölünmediğini ekrana yazdıran programı yazınız.
+* Type a program that prints numbers from 1 to 1000.
+s
+* Type a program that calculates the sum of integers from 1 to N.
 
-## Döngü Deyimleri Soruları:
+* Type a program that prints the multiplication table.
 
-* 1 ile 1000 arasındaki sayıları ekrana yazdıran programı yazınız.
+* Type a program that prints a part of the multiplication table (when 5 is entered, it prints 5's, when 10 is entered, it prints 10's).
 
-* 1’den N’e kadar olan tamsayıların toplamını hesaplayan programı yazınız.
+* Type a program that calculates the user entered number raised to the power of another number entered by the user.
 
-* Çarpım tablosunu yazdıran programı yazınız.
+* Type a program that calculates the factorial of a positive integer entered by the user.
 
-* Çarpım tablosunun istenilen kısmını yazdıran programı yazınız. (5 yazınca 5'ler, 10 yazınca 10'lar)
+* Type a program that checks whether a given number is prime.
 
-* Kullanıcıdan alınan sayının yine kullanıcıdan alınan üs değeri ile hesaplayan programı yazınız.
+* Type a program that calculates the prime numbers from 1 to 100.
 
-* Girilen pozitif bir tamsayının faktöriyelini hesaplayan programı yazınız.
+* Type a program that finds the divisors of a positive integer entered by the user and displays them on the screen.
 
-* Girilen sayının asal olup olmadığını hesaplayan programı yazınız.
+* Type a program that calculates the prime factors of a given number.
 
-* 1'den 100 e kadarki asal sayıları hesaplayan programı yazınız.
+* Type a program that prints the perfect numbers from 1 to 1000. (e.g.: 6=1+2+3, the sum of its divisors)
 
-* Girilen pozitif bir tamsayının tam bölenlerini bulup ekrana yazdıran programı yazınız.
+* Type a program that prints an empty square.
 
-* Girilen sayının asal çarpanlarını hesaplayan programı yazınız.
+* Type a program that prints the first 10 elements of the Fibonacci sequence.
 
-* 1 den 1000 e kadar olan sayılardan perfect number olanları yazdıran programı yazınız. (ör: 6=1+2+3 tam bölenlerinin toplamı)
+* Type a program that separates and prints the digits of a given number.
 
-* İçi boş kare yazdıran programı yazınız.
+* Type a program that tells how many digits a given number has.
 
-* Fibonaci dizisinin ilk 10 elemanını yazdıran programı yazınız.
+* Type a program that reverses a given number.
 
-* Girilen sayının basamaklarını tek tek ayırıp yazdıran programı yazınız.
+* Type a program that calculates the Armstrong numbers from 1 to 1000. (e.g.: 153 is 1 to the power of 3 + 5 to the power of 3 + 3 to the power of 3)
 
-* Girilen sayının kaç basamaklı olduğunu yazdıran programı yazınız.
+* Type a program that finds the palindrome numbers from 1 to 1000. (121)
 
-* Girilen sayıyı ters çeviren programı yazınız.
-
-* 1 den 1000 e kadarki armstrong sayılarını hesaplayan programı yazınız. (ör: 153 1 in 3. 5 in 3.  3 ün 3. kuvvetlerinin toplamına eşittir denilen sayılardır)
-
-* 1 den 1000 e kadarki palindrom sayıları bulan programı yazınız.(121)
-
-* 1 den 1000e kadar olan sayıların perfect number olanlarını ekrana yazdıran programı yazınız. (basamaklarının faktöriyellerinin toplamı kendisine eşit olan sayılar perfect numberdir.  ör: 145=145 1! + 4! + 5!)
-x
+* Type a program that prints the perfect numbers from 1 to 1000. (numbers that are equal to the sum of the factorials of their digits are called perfect numbers. e.g.: 145 = 145! + 4! + 5!)
