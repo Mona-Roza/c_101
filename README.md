@@ -270,7 +270,7 @@ printf("Text to be printed");
 | \\\ | Backslash |
 | \\' | Apostrophe or single quote mark |
 | \\" | Double quote mark |
-| \\? | Soru işareti (trigraphs) |
+| \\? | Question Mark (trigraphs) |
 | \nnn | Used to precede Octal value represented by nnn |
 | \xhh… | Byte represented by hh, hexadecimal number |
 | \uhhhh | Unicode code point below 10000 hexadecimal value |
