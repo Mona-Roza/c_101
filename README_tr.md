@@ -102,7 +102,7 @@ Değişkenler(variables), bellekte bilginin saklandığı gözlere verilen simge
 
 Değişkenler kapladıkları yer dolayısıyla belli bir sınır aralığına sahiptirler. 
 
-{% gist 5555251 %}
+{% gist fb4c5cbf70632711e3fb522593cc5ff2 variablerangelimits.tsv %}
 
 | Veri Türü | Bit Genişliği |	Sınır Aralığı |
 |---|---|---| 
